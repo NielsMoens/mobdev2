@@ -9,7 +9,7 @@ const students = [
         img: "https://arteveldehogeschool.instructure.com/images/thumbnails/361622/Hdz96JBJkVt1onVo7iztL1qxO8FH4Hby19lvg26J",
         name: "Robin Bekaert",
         number: "201807469",
-        present: true,
+        present: false,
     },
     {
         img: "https://arteveldehogeschool.instructure.com/images/messages/avatar-50.png",
@@ -39,7 +39,7 @@ const students = [
         img: "https://arteveldehogeschool.instructure.com/images/thumbnails/80385/CaGIJi5AWDSa7EUfg7lAxrjXDogxmL0QF17vJ8ji",
         name: "Emiel De Vleeschouwer",
         number: "201803933",
-        present: true,
+        present: false,
     },
     {
         img: "https://arteveldehogeschool.instructure.com/images/messages/avatar-50.png",
@@ -57,7 +57,7 @@ const students = [
         img: "https://arteveldehogeschool.instructure.com/images/thumbnails/1306286/ui4OO2mkQ0DSTAFA42mL7lWx60qPOnIQ32PyHM65",
         name: "Jonas Di Dier ",
         number: "201697561",
-        present: true,
+        present: false,
     },
     {
         img: "https://arteveldehogeschool.instructure.com/images/messages/avatar-50.png",
@@ -93,7 +93,7 @@ const students = [
         img: "https://arteveldehogeschool.instructure.com/images/messages/avatar-50.png",
         name: "Kenneth Linthout",
         number: "201913242",
-        present: true,
+        present: false,
     },
     {
         img: "https://arteveldehogeschool.instructure.com/images/thumbnails/81943/6a8W5dl6P1pasOcbhLtE5B86WtjBzZKiRyYwNvO2",
@@ -117,7 +117,7 @@ const students = [
         img: "https://arteveldehogeschool.instructure.com/images/messages/avatar-50.png",
         name: "Camille Van Damme",
         number: "201703402",
-        present: true,
+        present: false,
     },
     {
         img: "https://arteveldehogeschool.instructure.com/images/thumbnails/813264/cnhYJuWbkojENsYYeh7OF0SoRKhhtJSyOvdP8DTC",

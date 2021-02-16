@@ -45,3 +45,18 @@ footer {
   width: 200px;
   height: 200px;
 }
+
+.student__badge{
+  padding: 0.25rem;
+  background:rgba(0, 255, 0, 0.2); 
+}
+.student__badge.student__badge--absent {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.studentAtt{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
