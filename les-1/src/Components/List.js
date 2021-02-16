@@ -23,6 +23,10 @@ import Button from './Button';
             <div className="studentAtt">
                 <p>Totale Carps {count} </p>
                 <Button  onClick={handleToggleClick}>ToggleAttendance</Button>
+            {
+                showPresent ? 
+                <h2> Aanwezige studenten </h2> : <h2> Alle studenten </h2>
+            }
             </div>
             <ul className="student-list">
                 {filteredStudents.map((student) => (
