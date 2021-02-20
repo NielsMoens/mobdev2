@@ -3,9 +3,9 @@ import List from './List';
 import Header from './Header';
 import Intro from './Intro';
 
-const Opdracht1 = () => {   
+const Opdracht2 = () => {   
     const title = 'FONS MAKKER';
-    const subtitle = 'Checkt Da Vinneke'
+    const subtitle = 'Checkt Da Tweede Vinneke'
 
     const handlePrevClick = () => {
         window.alert("prev");
@@ -34,4 +34,4 @@ const Opdracht1 = () => {
     );
   };
 
-export default Opdracht1;
+export default Opdracht2;

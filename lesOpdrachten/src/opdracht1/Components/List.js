@@ -4,9 +4,6 @@ import Item from './Item';
 import Button from './Button';
     const List = ({onStudentClick}) => {
 
-    // student count
-    const count = students.length;
-
     //  state
     //  REACT hook
     const [showPresent, setShowPresent] = useState(false);
@@ -14,6 +11,9 @@ import Button from './Button';
     
     const filteredStudents = showPresent ? students.filter((students)=> students.present) : students
     
+    // student count
+    const count = filteredStudents.length;
+
     const handleToggleClick = () =>{
        setShowPresent(!showPresent);
     }
