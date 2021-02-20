@@ -1,8 +1,8 @@
 import {useState} from 'react';
-import students from '../students';
+import students from '../../students';
 import Item from './Item';
 import Button from './Button';
-    const List = (onStudentClick) => {
+    const List = ({onStudentClick}) => {
 
     // student count
     const count = students.length;

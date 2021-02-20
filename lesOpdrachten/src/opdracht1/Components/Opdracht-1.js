@@ -2,18 +2,11 @@ import Footer from './Footer';
 import List from './List';
 import Header from './Header';
 import Intro from './Intro';
-import Info from './Info';
-import students from '../students';
-import Button from './Button';
 
-
-const App = () => {   
-
+const Opdracht1 = () => {   
     const title = 'FONS MAKKER';
     const subtitle = 'Checkt Da Vinneke'
 
-    
-    
     const handlePrevClick = () => {
         window.alert("prev");
     }
@@ -24,19 +17,15 @@ const App = () => {
     const handleStudentClick = (name) => {
         window.alert(name);
     };
-    const handleToggleClick = () =>{
-        
-    }
+
     return(
         <>
-            <Header onPrevClick={handlePrevClick}                    onNextClick={handleNextClick}>
+            <Header onPrevClick={handlePrevClick} onNextClick={handleNextClick}>
                 { title }
                 <Intro title={subtitle}/>
        
             </Header>
             <main className="container">
-           
-                
                 <List onStudentClick={handleStudentClick} />
             </main>
             <Footer />
@@ -45,4 +34,4 @@ const App = () => {
     );
   };
 
-export default App;
+export default Opdracht1;
