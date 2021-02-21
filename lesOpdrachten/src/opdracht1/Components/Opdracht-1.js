@@ -1,10 +1,10 @@
 import Footer from './Footer';
 import List from './List';
 import Header from './Header';
-import Intro from './Intro';
+import Intro from '../../shared/Intro';
 
 const Opdracht1 = () => {   
-    const title = 'FONS MAKKER';
+    const title = 'FONS MAKKER ';
     const subtitle = 'Checkt Da Vinneke'
 
     const handlePrevClick = () => {
@@ -22,7 +22,7 @@ const Opdracht1 = () => {
         <>
             <Header onPrevClick={handlePrevClick} onNextClick={handleNextClick}>
                 { title }
-                <Intro title={subtitle}/>
+                <Intro subtitle={subtitle}/>
        
             </Header>
             <main className="container">

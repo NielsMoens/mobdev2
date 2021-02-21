@@ -17,6 +17,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: lightgray;
 }
 
 header button {
@@ -34,7 +35,7 @@ footer {
 }
 
 .student-item {
-  width: 25%;
+  width: 20%;
   list-style-type: none;
   padding: 0.25rem;
   text-align: center;
@@ -76,5 +77,38 @@ footer {
 }
 
 .navbar li.active button {
+  font-weight: bold;
+}
+
+.intro {
+ 
+  border-radius: 0.5rem;
+  padding: 0.2rem 1rem;
+}
+
+.intro h1 {
+  margin-bottom: 0;
+}
+
+.intro h1 + p {
+  margin-top: 0.5rem;
+}
+
+.info {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.pagination ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li {
+  list-style-type: none;
+}
+
+.pagination li.active button {
   font-weight: bold;
 }
