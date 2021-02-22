@@ -1,4 +1,4 @@
-import Button from './Button';
+import Button from '../../opdracht2/Components/Button';
 
 const Pagination = ({currentPage , max, onClick}) => {
     let array = [];

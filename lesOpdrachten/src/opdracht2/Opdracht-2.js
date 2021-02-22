@@ -1,15 +1,13 @@
 import {useState} from 'react';
-import Footer from './Footer';
-import List from './List';
-import Header from './Header';
-import Intro from '../../shared/Intro';
-import students from '../../students';
-import Pagination from './Pagination';
-
-
+import Footer from './Components/Footer';
+import List from '../Les2/Components/List';
+import Header from './Components/Header';
+import Intro from '../shared/Intro';
+import students from '../shared/students';
+import Pagination from '../Les2/Components/Pagination';
 
 const Opdracht2 = () => {   
-    const title = 'FONS MAKKER^2';
+    const title = 'FONS MAKKER';
     
     const MAX_PER_PAGE = 4;
     const [page, setPage] = useState(1);

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import Opdracht1 from './opdracht1/Components/Opdracht-1'
 

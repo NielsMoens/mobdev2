@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import students from '../../students';
+import students from '../../shared/students';
 import Item from './Item';
 import Button from './Button';
     const List = ({onStudentClick}) => {

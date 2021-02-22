@@ -28,6 +28,11 @@ footer {
   text-align: center;
 }
 
+.container {
+  width: 90%;
+  max-width: 60rem;
+  margin: 2rem auto;
+}
 .student-list {
   display: flex;
   flex-wrap: wrap;
@@ -43,8 +48,8 @@ footer {
 }
 
 .student-item .student-item__img {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 }
 
 .student__badge{
@@ -111,4 +116,58 @@ footer {
 
 .pagination li.active button {
   font-weight: bold;
+}
+.intro {
+  background: #eee;
+  border-radius: 0.5rem;
+  padding: 0.2rem 1rem;
+}
+
+.intro h1 {
+  margin-bottom: 0;
+}
+
+.intro h1 + p {
+  margin-top: 0.5rem;
+}
+
+.info {
+  border-radius: 0.5rem;
+  background: #eee;
+  padding: 0.5rem;
+}
+
+ul {
+  padding: 0;
+}
+
+.student {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.student img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.student__badge {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-left: auto;
+  background: rgba(0, 255, 0, 0.2);
+}
+
+.student__badge.student__badge--absent {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.error {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background: rgba(255, 0, 0, 0.2);
+  color: red;
 }
