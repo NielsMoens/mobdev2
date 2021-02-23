@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Intro from '../shared/Intro';
 import StudentsOverview from './Components/StudentsOverview';
 
-const Les2 = () => {
+const Les3 = () => {
     // state
     const [ students, setStudents ] = useState();
     const [ error, setError ] = useState();
@@ -33,7 +33,7 @@ const Les2 = () => {
     return (
         <>
             <Intro
-                subtitle="Les 2"
+                subtitle="Les 3"
                 description="useState en useEffect"
                 />
 
@@ -52,4 +52,4 @@ const Les2 = () => {
     );
 };
 
-export default Les2;
+export default Les3;

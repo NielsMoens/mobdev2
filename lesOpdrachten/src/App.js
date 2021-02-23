@@ -1,6 +1,8 @@
 import Opdracht1 from './opdracht1/Components/Opdracht-1';
 import Opdracht2 from './opdracht2/Opdracht-2';
 import Les2 from './Les2/Les2';
+import Les3 from './Les3/Les3';
+import Opdracht3 from './Opdacht3/Opdracht3';
 import './index.css';
 import {useEffect, useState} from 'react';
 
@@ -9,12 +11,20 @@ const pages = [ {
     title: 'Opdracht 1',
 },
 {
+    key: 'Les 2',
+    title: 'Les 2',
+},
+{
     key: 'Opdracht 2',
     title: 'Opdracht 2',
 },
 {
-    key: 'Les 2',
-    title: 'Les 2',
+    key: 'Les 3',
+    title: 'Les 3',
+},
+{
+    key: 'Opdracht 3',
+    title: 'Opdracht 3',
 }];
 
 const KEY_INDEX = 'current _page';
@@ -46,10 +56,14 @@ const App = () => {
         switch (key) {
             case 'Opdracht 1':
                 return <Opdracht1/>;
-            case 'Opdracht 2':
-                return <Opdracht2/>;
             case 'Les 2':
                 return <Les2/>;
+            case 'Opdracht 2':
+                return <Opdracht2/>;
+            case 'Les 3':
+                return <Les3/>;
+            case 'Opdracht 3':
+                return <Opdracht3/>;
             default:
                 return null;
         }

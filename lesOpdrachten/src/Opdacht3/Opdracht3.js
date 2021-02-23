@@ -1,10 +1,7 @@
-
-import { useState, useEffect } from 'react';
 import Intro from '../shared/Intro';
-import StudentsOverview from './Components/StudentsOverview';
-
-const Les2 = () => {
-    // state
+import { useState, useEffect } from 'react';
+const Opdracht3 = () => {
+    
     const [ students, setStudents ] = useState();
     const [ error, setError ] = useState();
 
@@ -29,27 +26,30 @@ const Les2 = () => {
     }, []);
 
     const isLoading = !students && !error;
+    
+    if(isLoading) {
+        return (
+            <section>
+                <p>
+                    loading 
+                </p>
+            </section>
+        );
+    }
 
     return (
-        <>
-            <Intro
-                subtitle="Les 2"
-                description="useState en useEffect"
-                />
-
+        <section>
+            <ul>
+                {students.map((student) => (
+                    <li > <button onClick={() => setActiveSt
+                    }>{student.name} ({student.number})</button></li>
+                ))}
+            </ul>
             {
-                error && <p className="error">{error}</p>
+                
             }
-
-            {
-                isLoading && <p>Loading</p>
-            }
-
-            {
-                students && <StudentsOverview students={students} />
-            }
-        </>
+        </section>
     );
 };
 
-export default Les2;
+export default Opdracht3;
