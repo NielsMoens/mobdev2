@@ -19,12 +19,12 @@ const pages = [ {
     title: 'Opdracht 2',
 },
 {
-    key: 'Les 3',
-    title: 'Les 3',
-},
-{
     key: 'Opdracht 3',
     title: 'Opdracht 3',
+},
+{
+    key: 'Les 3',
+    title: 'Les 3',
 }];
 
 const KEY_INDEX = 'current _page';
@@ -74,7 +74,7 @@ const App = () => {
             <ul className="navbar">
             {
                 pages.map((page, idx) => (
-                    <li key={pages.key} className={index === idx ? 'active': ''}>
+                    <li key={page.key} className={index === idx ? 'active': ''}>
                         <button onClick={() => handlePageClick(idx)}>
                            {page.title}
                         </button>

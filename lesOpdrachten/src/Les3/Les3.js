@@ -1,53 +1,36 @@
-
-import { useState, useEffect } from 'react';
+import './Les3.css';
+import { useState} from 'react';
 import Intro from '../shared/Intro';
-import StudentsOverview from './Components/StudentsOverview';
+import Detail from './Components/Detail';
+import Students from './Components/Students';
+import useGithubData from '../hooks/useGithubData';
 
 const Les3 = () => {
-    // state
-    const [ students, setStudents ] = useState();
-    const [ error, setError ] = useState();
-
-    useEffect(() => {
-        let isCurrent = true;
-
-        fetch('/data/students.json')
-            .then((response) => response.json())
-            .then((data) => {
-                if (isCurrent) {
-                    setStudents(data);
-                }
-            })
-            .catch((e) => {
-                if (isCurrent) {
-                    setError(String(e));
-                }
-            });
-        return () => {
-            isCurrent = false;
-        };
-    }, []);
-
-    const isLoading = !students && !error;
+    const [activeStudent, setActiveStudent] =useState();
+    const {data, error, isLoading} = useGithubData("yungpanda");
 
     return (
         <>
-            <Intro
-                subtitle="Les 3"
-                description="useState en useEffect"
-                />
-
-            {
-                error && <p className="error">{error}</p>
-            }
-
-            {
-                isLoading && <p>Loading</p>
-            }
-
-            {
-                students && <StudentsOverview students={students} />
-            }
+            <Intro 
+                subtitle = "Les 3"
+                description ='useEffect  advanced'
+            />
+            <section>
+                <h2>Lector</h2>
+                {
+                    data && <p>{data.name}</p>
+                }
+            </section>
+            <h2>Studenten</h2>
+            <section className="opdracht3">
+               <Students onStudentClick = {(student) => setActiveStudent(student)}/>
+                {
+                activeStudent && <Detail student = {activeStudent}/>
+                // das tzelfde 
+                // activeStudent  ? <Detail{activeStudent}</div> : null
+                }
+                
+            </section>
         </>
     );
 };
