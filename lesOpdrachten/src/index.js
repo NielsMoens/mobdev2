@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Opdracht1 from './opdracht1/Components/Opdracht-1'
-
+// scss/sass
+import './app.scss';
 
 // JSX ( soort van ontwikkelde vorm van html voor react )
 ReactDOM.render(
