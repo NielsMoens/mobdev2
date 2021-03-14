@@ -13,8 +13,7 @@ class MongoClient {
         db.on('error', console.error.bind(console, 'connection error:'));
         db.once('open', function () {
             // we're connected!
-            console.log("connected");
-            db.close();
+            console.log("MongoDB connected");
         });
         this.db = db;
     }

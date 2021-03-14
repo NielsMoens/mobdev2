@@ -8,20 +8,16 @@ const {
 // import env file
 require('dotenv').config();
 
-//  connect with db
+// connect with db
 // const db = new MongoClient();
-mongoose.connect(process.env.MONGO_CONNECTION, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+mongoose.connect(process.env.MONGO_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     // we're connected!
     console.log("connected");
-    db.close();
-});
 
+});
 
 const app = express();
 const port = process.env.NODE_PORT;
