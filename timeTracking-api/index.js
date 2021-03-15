@@ -1,43 +1,22 @@
-const express = require('express');
-const mongoose = require('mongoose');
 const MongoClient = require('./db/MongoClient');
-const {
-    registerRoutes
-} = require('./routes/index');
+const express = require('express');
+const { registerMiddleware } = require('./middleware/index')
+const {  registerRoutes } = require('./routes/index');
 
 // import env file
 require('dotenv').config();
 
 // connect with db
-// const db = new MongoClient();
-mongoose.connect(process.env.MONGO_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-    // we're connected!
-    console.log("connected");
-
-});
+const db = new MongoClient();
+db.connect();
 
 const app = express();
 const port = process.env.NODE_PORT;
 
-app.use(express.json());
-app.use(express.urlencoded({
-    extended: true,
-}));
-
+// register Middleware
+registerMiddleware(app);
 // register routes
 registerRoutes(app);
-
-// default 404
-app.use('/', (req, res) => {
-    res.status(404);
-    res.json({
-        error: "page not found"
-    });
-})
-
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}/`);

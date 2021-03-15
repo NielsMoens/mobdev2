@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 
 class MongoClient {
-    constructor(){
-
-    }
     connect() {
         mongoose.connect(process.env.MONGO_CONNECTION, {
             useNewUrlParser: true,
