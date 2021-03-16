@@ -1,6 +1,6 @@
 const ValidationError  = require("../errors/ValidationError");
 const  NotFoundError  = require( "../errors/NotFoundError");
-const { Client } = require('../modles/Client')
+const { Client } = require('../models/Client')
 
 class ClientController {
     getClients =  async (req, res, next) => {
