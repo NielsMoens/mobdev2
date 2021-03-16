@@ -21,7 +21,7 @@ const ClientOverview = () => {
 
     return (
         <>
-            <h1>Projects</h1>
+            <h1>Clients</h1>
             <Button color="secondary" onClick={() => refresh()}>Refresh</Button>
             <ul>
                 { clients.map((client) => (
