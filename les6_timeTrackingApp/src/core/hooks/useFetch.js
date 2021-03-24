@@ -1,11 +1,18 @@
 import { useState, useEffect, useCallback } from 'react';
+import {useAuth} from "../../components/Auth/AuthProvider";
 
 const useFetch = (url) => {
+
+    const {user} = useAuth();
     const [data, setData] = useState();
     const [error, setError] = useState();
 
     const fetchData = useCallback((isCurrent = true) => {
-        fetch(`${process.env.REACT_APP_BASE_API}${url}`)
+        fetch(`${process.env.REACT_APP_BASE_API}${url}`, {
+            headers: {
+                authorization: `bearer ${user.token}`,
+            }
+        })
             .then((json) => {
                 if (json.status === 404) {
                     throw new Error('Not found');

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import {login} from "../../../core/modules/auth/api";
+import Alert from "../../Design/Alert";
 import Container from '../../Design/Container';
 import Styles from './LoginPage.module.scss';
 import Input from '../../Design/Input';
@@ -18,6 +20,7 @@ const LoginPage = ({ setUser }) => {
         password: '',
     });
     const [errors, setErrors] = useState({});
+    const [error, setError] = useState();
 
     const handleChange = (e) => {
         setData({
@@ -28,22 +31,20 @@ const LoginPage = ({ setUser }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        schema.validate(data).then(() => {
-            fetch(`${process.env.REACT_APP_BASE_API}/login`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            }).then((response) => response.json())
-
+        schema.validate(data, {abortEarly: false}).then(() => {
+           login(data)
+            .then((json) => {
+                if (json.status === 200) {
+                    return json.json();
+                }
+                throw json.json();
+            })
                 .then((data) => {
                     setUser(data);
-                    console.log(data)
+
                 })
                 .catch((e) => {
-                    // TODO catch error properly
-                    console.log(e);
+                   setError(e);
                 })
 
         }).catch((err) => {
@@ -53,7 +54,8 @@ const LoginPage = ({ setUser }) => {
 
     return (
         <Container>
-            <div className="text-center">
+            <div className="text-center" >
+                { error && <Alert color="danger"> { error.message || 'something went wrong' } </Alert>}
                 <form className={Styles['form-signin']} onSubmit={handleSubmit} noValidate={true}>
                     <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
 

@@ -24,8 +24,6 @@ const localStrategy = new LocalStrategy(
     }
 )
 
-
-
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: process.env.JWT_SECRET,
@@ -46,7 +44,6 @@ const jwtStrategy = new Strategy(jwtOptions, async (payload, done) => {
 passport.use('local', localStrategy);
 passport.use('jwt', jwtStrategy);
 
-
 const passportWithErrorHandling = (strategy) => {
     return function (req, res, next){
         passport.authenticate(strategy, { session: false }, function (err, user){
@@ -62,7 +59,6 @@ const passportWithErrorHandling = (strategy) => {
         })(req, res, next);
     }
 }
-
 
 const authLocal = passportWithErrorHandling('local');
 const authJwt = passportWithErrorHandling('jwt');
