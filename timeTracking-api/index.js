@@ -1,10 +1,11 @@
-const MongoClient = require('./db/MongoClient');
-const express = require('express');
-const { registerMiddleware } = require('./middleware/index')
-const {  registerRoutes } = require('./routes/index');
 
 // import env file
 require('dotenv').config();
+
+const express = require('express');
+const MongoClient = require('./db/MongoClient');
+const { registerMiddleware } = require('./middleware/index')
+const {  registerRoutes } = require('./routes/index');
 
 // connect with db
 const db = new MongoClient();
